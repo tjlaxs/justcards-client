@@ -1,0 +1,73 @@
+html,body,.container
+{
+    height:100%;
+}
+.container
+{
+    display:table;
+    width: 100%;
+  	margin: 0px;
+    padding: 0px;
+}
+
+#chatWrap {
+    height: 500px;
+    overflow: auto;
+}
+
+#popup {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    margin: -50px 0 0 -200px;
+
+    height: 140px;
+    width: 400px;
+
+    background-color: bisque;
+}
+
+.genericWrap {
+    padding: 10px;
+}
+
+.jc-nav {
+    background-color: goldenrod;
+}
+
+.jc-import {
+    background-color: coral;
+}
+
+.jc-edit {
+    background-color: palevioletred;
+}
+
+.jc-chat {
+    background-color: aquamarine;
+}
+
+.row
+{
+    height: 100%;
+    display: table-row;
+}
+
+.col-md-3.jc-chat, .col-md-7.jc-edit, .col-md-2.jc-import {
+    float: none;
+}
+.col-md-2
+{
+    display: table-cell;
+}
+.col-md-3
+{
+    display: table-cell;
+}
+.col-md-9
+{
+    display: table-cell;
+  	float: none;
+}
