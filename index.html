@@ -19,7 +19,6 @@
                 <div class="jc-import" ui-layout-container>
                     <h1>Import</h1>
                     <div ng-controller="FileUploadController">
-                        <h1>Import</h1>
                         <div class="button" ngf-select ng-model="files">Upload using model $watch</div>
                         <div class="button" ngf-select ngf-change="upload($files)"></div>
                         Drop File:
@@ -37,13 +36,14 @@
                     <div ng-controller="ChatController">
                         <div ui-layout="{dividerSize: '0px'}">
                             <div id="chatWrap" ui-layout-container>
+                                <h1>Chat</h1>
                                 <p ng-repeat="m in chat.messages track by $index"><strong>{{m.sender}}:</strong> {{m.text}}</p>
                             </div>
                             <div ui-layout-container size="34px">
                                 <div class="input-group" style="width:100%">
                                     <input class="form-control" style="width:85%" type="text" ng-model="msg.text" placeholder="" />
                                     <span>
-                                        <button type="button" class="btn btn-default" ng-click="sendMessage()">Say</button>
+                                        <button style="width:15%" type="button" class="btn btn-default" ng-click="sendMessage()">Say</button>
                                     </span>
                                 </div>
                             </div>
