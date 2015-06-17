@@ -18,7 +18,14 @@
             <div ui-layout="{flow : 'column'}">
                 <div class="jc-import" ui-layout-container>
                     <h1>Import</h1>
-                    <p>Some stuff</p>
+                    <div ng-controller="FileUploadController">
+                        <h1>Import</h1>
+                        <div class="button" ngf-select ng-model="files">Upload using model $watch</div>
+                        <div class="button" ngf-select ngf-change="upload($files)"></div>
+                        Drop File:
+                        <div ngf-drop ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'image/*'">Drop images here</div>
+                        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser.</div>
+                    </div>
                 </div>
 
                 <div class="jc-edit" ui-layout-container>
@@ -62,6 +69,7 @@
     <script type="text/javascript" src="bower_components/raf/index.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-layout/ui-layout.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
     
     <script src="js/editor.js"></script>
     
