@@ -15,8 +15,13 @@
         </div>
         
         <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-2 jc-import">
+            <div class="jc-import" ng-controller="FileUploadController">
                 <h1>Import</h1>
+                <div class="button" ngf-select ng-model="files">Upload using model $watch</div>
+                <div class="button" ngf-select ngf-change="upload($files)"></div>
+                Drop File:
+                <div ngf-drop ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'image/*'">Drop images here</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser.</div>
             </div>
 
             <div class="col-md-7 col-sm-3 col-xs-7 jc-edit">
@@ -51,6 +56,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
     
     <script src="js/editor.js"></script>
