@@ -1,0 +1,24 @@
+{
+  "name": "justcards-client",
+  "version": "0.1.0",
+  "homepage": "https://github.com/tjlaxs/justcards-client",
+  "authors": [
+    "Tero Laxstrom <tlax@neonpeons.com>"
+  ],
+  "description": "JustCards angularjs client",
+  "main": "index.html",
+  "license": "GPL-v2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-file-upload": "~5.0.7",
+    "raf": "https://gist.githubusercontent.com/paulirish/1579671/raw/3d42a3a76ed09890434a07be2212f376959e616f/rAF.js",
+    "angular-ui-layout": "~1.0.5",
+    "angular": "~1.4.1"
+  }
+}

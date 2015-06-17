@@ -1,4 +1,4 @@
-var app = angular.module('justCardsApp', []);
+var app = angular.module('justCardsApp', ['ui.layout']);
 
 app.factory('socket', function () {
     var socket = io();
