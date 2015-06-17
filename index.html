@@ -4,6 +4,7 @@
 <head>
     <title>Ng-Justcards</title>
     <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-layout/ui-layout.css" />
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/editor.css" />
 </head>
     
@@ -31,10 +32,14 @@
                             <div id="chatWrap" ui-layout-container>
                                 <p ng-repeat="m in chat.messages track by $index"><strong>{{m.sender}}:</strong> {{m.text}}</p>
                             </div>
-                            <form action="" ui-layout-container size="30px">
-                                <input style="width:79%" type="text" ng-model="msg.text" />
-                                <input style="width:18%" type="button" class="btn btn-default" ng-click="sendMessage()" value="Submit" />
-                            </form>
+                            <div ui-layout-container size="34px">
+                                <div class="input-group" style="width:100%">
+                                    <input class="form-control" style="width:85%" type="text" ng-model="msg.text" placeholder="" />
+                                    <span>
+                                        <button type="button" class="btn btn-default" ng-click="sendMessage()">Say</button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <div id="popup" class="ng-hide" ng-hide="chat.identified">
                             <div class="genericWrap">
