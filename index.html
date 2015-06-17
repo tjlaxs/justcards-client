@@ -4,6 +4,7 @@
 <head>
     <title>Ng-Justcards</title>
     <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-layout/ui-layout.css" />
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/editor.css" />
 </head>
     
@@ -17,7 +18,13 @@
             <div ui-layout="{flow : 'column'}">
                 <div class="jc-import" ui-layout-container>
                     <h1>Import</h1>
-                    <p>Some stuff</p>
+                    <div ng-controller="FileUploadController">
+                        <div class="button" ngf-select ng-model="files">Upload using model $watch</div>
+                        <div class="button" ngf-select ngf-change="upload($files)"></div>
+                        Drop File:
+                        <div ngf-drop ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" ngf-accept="'image/*'">Drop images here</div>
+                        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser.</div>
+                    </div>
                 </div>
 
                 <div class="jc-edit" ui-layout-container>
@@ -29,12 +36,17 @@
                     <div ng-controller="ChatController">
                         <div ui-layout="{dividerSize: '0px'}">
                             <div id="chatWrap" ui-layout-container>
+                                <h1>Chat</h1>
                                 <p ng-repeat="m in chat.messages track by $index"><strong>{{m.sender}}:</strong> {{m.text}}</p>
                             </div>
-                            <form action="" ui-layout-container size="30px">
-                                <input style="width:79%" type="text" ng-model="msg.text" />
-                                <input style="width:18%" type="button" class="btn btn-default" ng-click="sendMessage()" value="Submit" />
-                            </form>
+                            <div ui-layout-container size="34px">
+                                <div class="input-group" style="width:100%">
+                                    <input class="form-control" style="width:85%" type="text" ng-model="msg.text" placeholder="" />
+                                    <span>
+                                        <button style="width:15%" type="button" class="btn btn-default" ng-click="sendMessage()">Say</button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <div id="popup" class="ng-hide" ng-hide="chat.identified">
                             <div class="genericWrap">
@@ -57,6 +69,7 @@
     <script type="text/javascript" src="bower_components/raf/index.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-layout/ui-layout.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
     
     <script src="js/editor.js"></script>
     
